@@ -55,3 +55,17 @@
     });
   }
 ```
+
+## fetch image with blob type
+```
+  fetchImageBlob = (url) => {
+    return fetch(url)
+        .then(resp => {
+            return resp.blob();
+        })
+        .then(resp => {
+            let url = URL.createObjectURL(resp);
+            return url;
+        });
+  }
+```
